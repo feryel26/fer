@@ -18,7 +18,7 @@ public class Controller {
 @Autowired
     private IService iService;
 
-@PostMapping ("addWorker")
+@PostMapping ("addw")
 
 public Worker addWorker(@RequestBody Worker worker) {
 
