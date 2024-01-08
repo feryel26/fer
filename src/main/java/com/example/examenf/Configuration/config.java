@@ -34,4 +34,12 @@ public class config {
     //Q5 en ulisant AOP implimenter un aspet qui permet dafficher le message "nb restant depasse" si la methode ajouterTicketEtAffecterAEvenementEtInternaute retoune une exception
 
 
+    //Q6 en respectant signature en utisnat KEYWORD afficher le nombre dinternaute de la tranche dage ADULTE ayant participe a des evenement entre "2024-08-01" et "2024-10-1"
+    //Long nbInternauteParTrancheAgeEtDateEvenement(TrancheAge trancheage ,LovalDate dateMin,LocalDate dateMax);
+
+    //Q7 en utilisant jpql ajouter le montant a recupere pour un evenement donnee selon le type de ticket
+   // Double montantRecupereParEvtEtTypeTicket(String nomEvt,TypeTicket typeTicket)
+    //Q8 afficher linternaute le plus actif celui qui achete plus de ticket
+    //String internauteLePlusActif();
+
 }
