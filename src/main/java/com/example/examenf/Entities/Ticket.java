@@ -13,15 +13,19 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "vehicle")
-public class Vehicle {
+@Table(name = "ticket")
+public class Ticket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idVehicle;
-    private String brand;
-    private String immatriculation;
-    @OneToMany(cascade = CascadeType.ALL)
-    private Set<Reservation> reservations;
+    private long idTicket;
+    private String codeTicket;
+    private Double prixTicket;
 
+    @Enumerated(EnumType.STRING)
+    private TypeTicket typeTicket;
+    @ManyToOne
+    Internaute internaute;
+    @ManyToOne
+    Evenement evenement;
 }

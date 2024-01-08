@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.Set;
 
 @Entity
@@ -13,14 +14,16 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "worker")
-
-public class Worker {
+@Table(name = "internaute")
+public class Internaute {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idAgent;
-    private String name;
-    private String nic;
-    @ManyToOne
-    Reservation reservation;
+    private long idInternaute;
+    private String identifiant;
+
+    @Enumerated(EnumType.STRING)
+    private TrancheAge trancheAge;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="internaute")
+    private Set<Ticket> Tickets;
+
 }

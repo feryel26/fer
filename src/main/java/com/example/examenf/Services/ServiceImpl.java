@@ -1,13 +1,13 @@
 package com.example.examenf.Services;
 
 
-import com.example.examenf.Entities.Reservation;
-import com.example.examenf.Entities.Washing_Service;
-import com.example.examenf.Entities.Worker;
-import com.example.examenf.Repository.IReservation;
-import com.example.examenf.Repository.IWashing;
-import com.example.examenf.Repository.IWorker;
-import com.example.examenf.Repository.IVehicle;
+import com.example.examenf.Entities.Internaute;
+import com.example.examenf.Entities.Evenement;
+import com.example.examenf.Entities.Categorie;
+import com.example.examenf.Repository.IInternaute;
+import com.example.examenf.Repository.IEvenement;
+import com.example.examenf.Repository.ICategorie;
+import com.example.examenf.Repository.ITicket;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.annotation.Aspect;
@@ -25,26 +25,26 @@ import java.util.List;
 public class ServiceImpl implements IService{
 
 
-    final IReservation iReservation;
-    final IWorker iWorker;
-    final IVehicle iVehicle;
-    final IWashing iWashing;
+    final IInternaute iInternaute;
+    final ICategorie iCategorie;
+    final ITicket iTicket;
+    final IEvenement iEvenement;
 
 
     @Override
-    public Worker addWorker(Worker worker) {
-        return iWorker.save(worker);
+    public Internaute ajouterInternaute(Internaute internaute) {
+        return iInternaute.save(internaute);
     }
 
-    @Override
-    public List<Washing_Service> addWashingService(List<Washing_Service> washingServices) {
-        return iWashing.saveAll(washingServices);
-    }
+   // @Override
+   // public List<Evenement> addWashingService(List<Evenement> washingServices) {
+      //  return iEvenement.saveAll(washingServices);
+   // }
 
-    @Scheduled(fixedRate = 15000) //Lezemni nziid l annotation enablescheduling fil main
-    public void testSchedulure() {
-        for(Reservation r:iReservation.reservsbydate()){
-            log.info(String.valueOf(r));
-        }
-    }
+   // @Scheduled(fixedRate = 15000) //Lezemni nziid l annotation enablescheduling fil main
+   // public void testSchedulure() {
+      //  for(Internaute r: iInternaute.reservsbydate()){
+          //  log.info(String.valueOf(r));
+        //}
+    //}
 }

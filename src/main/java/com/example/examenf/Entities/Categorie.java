@@ -13,15 +13,16 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "washing_Service")
-public class Washing_Service {
+@Table(name = "categorie")
+
+public class Categorie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idService;
-    private Float price;
-    @Enumerated(EnumType.STRING)
-    private Type type;
-    @ManyToMany(mappedBy="washingServices"
-            , cascade = CascadeType.ALL)
-    private Set<Reservation> reservations;
+    private long idCategorie;
+    private String codeCategorie;
+    private String nomCategorie;
+
+    @ManyToMany(mappedBy="categories", cascade = CascadeType.ALL)
+    private Set<Evenement> evenements;
+
 }
